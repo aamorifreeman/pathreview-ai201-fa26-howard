@@ -12,7 +12,7 @@
 
 **Branch name:** `fix/69-json-array-output-fallback`
 
-**Setup confirmation:** [ ] App runs locally at localhost:5173
+**Setup confirmation:** [x] App runs locally at localhost:5173
 
 **Cohort ledger:** [ ] Issue added to cohort ledger
 
@@ -30,14 +30,14 @@
 - Created the GitHub fork and cloned from `aamorifreeman/pathreview-ai201-fa26-howard`.
 - Added the course repository as `upstream` and created the working branch above.
 - Copied `.env.example` to the ignored `.env`, using the default mock LLM provider; no real credentials are committed.
-- `make setup` installed Python dependencies and the pre-commit hook, then stopped at the database migration because PostgreSQL was not available on port 5433. Docker is not installed on this machine, so backing services have not been started.
+- `make setup` installed Python dependencies and the pre-commit hook, then stopped at the database migration because PostgreSQL was not available on port 5433. After Docker Desktop was installed and started, PostgreSQL and Redis came up healthy. The migrations and sample data seed then completed successfully.
 - Installed frontend dependencies separately with `npm ci`; `npm run build` passes (TypeScript check and Vite production build).
+- Started the app with `make run`. The frontend served the PathReview page at localhost:5173, and the API returned HTTP 200 for `/openapi.json` on port 8000. The pinned Chroma image could not start because it references NumPy's removed `np.float_` API. Vector search was not verified.
 - Normal parser test run: **18 passed, 1 xfailed**.
 - Reproduction with `.venv/bin/python -m pytest tests/unit/test_output_parser.py -q --runxfail`: **1 failed, 18 passed**, with `AttributeError: 'list' object has no attribute 'items'` at the `data.items()` loop. No production fix has been made yet.
 
 ### Remaining before Unit 7 submission
 
-- Install/start Docker, then run `docker compose up -d`, `make setup`, and `make run`; verify the app loads at localhost:5173 before checking setup confirmation.
 - Post the issue claim and enter Aamori Freeman / aamorifreeman / 69 on the Howard cohort ledger.
 - Push the setup/journal commit and submit the working branch URL only when authorized.
 
