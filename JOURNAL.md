@@ -71,3 +71,17 @@ Observed **1 failed, 18 passed**. The failing test was `TestOutputParser::test_j
 **Next steps:** Run the full unit suite, open the draft PR, and verify the five CI jobs.
 
 **Blockers:** The local unit suite needed network access for its tokenizer data. The pinned Chroma container still fails locally, so the integration checks need separate verification.
+
+### Check-in 2 (end of week)
+
+**PR link:** [PathReview PR #85](https://github.com/codepath/pathreview-ai201-fa26-howard/pull/85)
+
+**Branch:** `fix/69-json-array-output-fallback`
+
+**What you built:** The parser now sends valid non-object JSON to its existing plain-text fallback. This preserves the whole response in one feedback section and keeps structured parsing for JSON objects.
+
+**Tests added or updated:** `tests/unit/test_output_parser.py` verifies that raw and fenced arrays, empty arrays, and JSON null preserve the original response. The strict xfail for #69 was removed. All 24 parser tests passed, and the full unit suite reported 381 passed and 52 expected failures.
+
+**Self-review confirmation:** [x] make check passes  [x] make test-unit passes
+
+**Draft PR feedback received from:** None at the time of this entry.
