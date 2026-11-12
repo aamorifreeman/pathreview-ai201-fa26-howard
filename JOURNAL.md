@@ -43,3 +43,15 @@
 ### Extra credit
 
 The Unit 7 rubric awards 10 required points and lists no extra-credit or stretch tasks. The suggested second issue later in Module 3 is explicitly not separately graded.
+
+## Unit 8 — Reproduction & solution planning
+
+**Reproduction summary:** Running the seeded parser tests with `--runxfail` exposed an `AttributeError` in `_parse_json_output()` when a valid top-level JSON array reached the dictionary parser. Calling `parse_review_output()` directly with the same array as raw JSON and inside a JSON code fence reproduced the exception in both paths.
+
+Run from the repository root:
+
+```sh
+.venv/bin/python -m pytest tests/unit/test_output_parser.py -q --runxfail
+```
+
+Observed **1 failed, 18 passed**. The failing test was `TestOutputParser::test_json_array_fallback`, and the exception was `AttributeError: 'list' object has no attribute 'items'` at the `data.items()` loop.
