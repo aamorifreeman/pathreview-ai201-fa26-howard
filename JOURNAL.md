@@ -14,7 +14,7 @@
 
 **Setup confirmation:** [x] App runs locally at localhost:5173
 
-**Cohort ledger:** [ ] Issue added to cohort ledger
+**Cohort ledger:** [x] Issue added to cohort ledger (Howard tab, row 23)
 
 ### Selection notes and checklist reasoning
 
@@ -23,7 +23,7 @@
 - **Codebase readiness:** Read `rag/generator/output_parser.py`, including `parse_review_output()`, `_parse_json_output()`, and `_parse_plaintext_output()`. Read `tests/unit/test_output_parser.py`, including `test_json_array_fallback` and the object/plain-text tests. Both raw JSON and fenced JSON paths need examination because both call the same object-only helper.
 - **Done:** An array response should return feedback sections rather than raising; existing object and plain-text tests should continue to pass. The strict xfail marker for #69 must be removed when the bug is fixed.
 - **Scope and time:** The tracker estimates 2–4 hours. The change is localized to the parser and its test file, with no schema migration, paid model call, or dependency on a different issue. Verification can run offline without PostgreSQL, Redis, or Docker.
-- **Claims check:** On November 2, 2026, the issue was open with no comments or assignees, and the cohort catalog showed zero claims. Claims are non-exclusive. The issue comment and Howard ledger entry are still pending.
+- **Claims check:** On November 2, 2026, the issue was open with no comments or assignees, and the cohort catalog showed zero claims. Claims are non-exclusive. The [claim comment](https://github.com/codepath/pathreview-ai201-fa26-howard/issues/69#issuecomment-6832336642) was posted on November 12, 2026. The Howard ledger entry for issue #69 is in row 23.
 
 ### Setup progress and evidence
 
@@ -38,8 +38,7 @@
 
 ### Remaining before Unit 7 submission
 
-- Post the issue claim and enter Aamori Freeman / aamorifreeman / 69 on the Howard cohort ledger.
-- Push the setup/journal commit and submit the working branch URL only when authorized.
+- Submit the [working branch URL](https://github.com/aamorifreeman/pathreview-ai201-fa26-howard/tree/fix/69-json-array-output-fallback) in CodePath.
 
 ### Extra credit
 
