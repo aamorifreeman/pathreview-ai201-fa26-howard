@@ -61,3 +61,13 @@ Observed **1 failed, 18 passed**. The failing test was `TestOutputParser::test_j
 **PLAN.md link:** [Issue #69 solution plan](https://github.com/aamorifreeman/pathreview-ai201-fa26-howard/blob/fix/69-json-array-output-fallback/PLAN.md)
 
 **Blockers or open questions:** The course Chroma image still fails to start. The parser reproduction and planned regression tests run without it.
+
+## Unit 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:** Added type checks to the raw and fenced JSON paths. The parser now preserves non-object responses using the existing plain-text fallback. Removed the strict expected-failure marker for #69 and verified all 24 parser tests pass.
+
+**Next steps:** Run the full unit suite, open the draft PR, and verify the five CI jobs.
+
+**Blockers:** The local unit suite needed network access for its tokenizer data. The pinned Chroma container still fails locally, so the integration checks need separate verification.
