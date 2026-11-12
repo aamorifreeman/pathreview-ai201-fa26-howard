@@ -55,3 +55,9 @@ Run from the repository root:
 ```
 
 Observed **1 failed, 18 passed**. The failing test was `TestOutputParser::test_json_array_fallback`, and the exception was `AttributeError: 'list' object has no attribute 'items'` at the `data.items()` loop.
+
+**Reproduction commit link:** [Documented reproduction](https://github.com/aamorifreeman/pathreview-ai201-fa26-howard/commit/4a20c92ab773043b61bf137f7a66f3f38d770e1b)
+
+**PLAN.md link:** [Issue #69 solution plan](https://github.com/aamorifreeman/pathreview-ai201-fa26-howard/blob/fix/69-json-array-output-fallback/PLAN.md)
+
+**Blockers or open questions:** The course Chroma image still fails to start. The parser reproduction and planned regression tests run without it.
